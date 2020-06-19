@@ -16,7 +16,6 @@ type Database struct {
 
 // config get values from .env file and populates the Database obj
 func (db *Database) config() {
-	// Setters
 	db.Driver = os.Getenv("DB_DRIVER")
 	db.Host = os.Getenv("DB_HOST")
 	db.Port = os.Getenv("DB_PORT")

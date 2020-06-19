@@ -18,10 +18,11 @@ type Server struct {
 }
 
 func (s *Server) init() {
+	// DB
 	db := Database{}
 	db.config()
 	s.DB, _ = db.init()
-
+	// Router
 	s.Router = mux.NewRouter()
 	s.configRoutes()
 }

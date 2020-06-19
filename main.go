@@ -7,9 +7,15 @@ import (
 )
 
 func main() {
+	// Load .env file
 	godotenv.Load()
+	port := os.Getenv("SERVER_PORT")
+	// Server Listener
+	startAPI(port)
+}
+
+func startAPI(port string) {
 	server := Server{}
 	server.init()
-	server.configRoutes()
-	server.Run(os.Getenv("SERVER_PORT"))
+	server.Run(port)
 }
