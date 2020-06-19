@@ -22,6 +22,7 @@ func (s *Server) init() {
 	db := Database{}
 	db.config()
 	s.DB, _ = db.init()
+	s.DB.AutoMigrate(&User{})
 	// Router
 	s.Router = mux.NewRouter()
 	s.configRoutes()

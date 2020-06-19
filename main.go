@@ -1,17 +1,14 @@
 package main
 
 import (
-	"os"
-
 	"github.com/joho/godotenv"
 )
 
 func main() {
 	// Load .env file
 	godotenv.Load()
-	port := os.Getenv("SERVER_PORT")
 	// Server Listener
-	startAPI(port)
+	startAPI(":8080")
 }
 
 func startAPI(port string) {
